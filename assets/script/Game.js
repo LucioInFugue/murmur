@@ -32,12 +32,15 @@ cc.Class({
             default: null,
             type: cc.Prefab,
         },
+        current: {
+            default: 0,
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        if (this.BGMAudio != null) cc.audioEngine.playMusic(this.BGMAudio[0], true);
+        //if (this.BGMAudio != null) cc.audioEngine.playMusic(this.BGMAudio[0], true);
         this.node.on(cc.Node.EventType.TOUCH_START,this.onTouchStart,this);
     },
 

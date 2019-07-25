@@ -26,10 +26,11 @@ cc.Class({
     onTouchEnd(t) {
         console.log('ok');
         if (this.BGMID>=0) {
-            cc.audioEngine.playMusic(cc.find('Canvas').getComponent('Game').BGMAudio[this.BGMID], true);
+            let canvasS = cc.find('Canvas').getComponent('Game');
+            canvasS.current = cc.audioEngine.playMusic(canvasS.BGMAudio[this.BGMID], true);
         } else {
-            cc.audioEngine.stop();
-            if (this.BGMID==-2) cc.director.end();
+            let canvasS = cc.find('Canvas').getComponent('Game');
+            cc.audioEngine.stop(canvasS.current);
         }
         let ui = cc.find('Canvas/MainUI');
         if (ui!=null) ui.destroy();
