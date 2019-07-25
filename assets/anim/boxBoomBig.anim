@@ -1,0 +1,87 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "boxBoomBig",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "fillRange": [
+          {
+            "frame": 0,
+            "value": 0
+          },
+          {
+            "frame": 0.5,
+            "value": 1
+          },
+          {
+            "frame": 1.6666666666666667,
+            "value": 1
+          },
+          {
+            "frame": 2,
+            "value": 0
+          }
+        ]
+      }
+    },
+    "props": {
+      "scale": [
+        {
+          "frame": 0.55,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 2,
+            "y": 12
+          }
+        },
+        {
+          "frame": 0.6666666666666666,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 2.5,
+            "y": 15
+          }
+        },
+        {
+          "frame": 0.8333333333333334,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 2,
+            "y": 12
+          }
+        },
+        {
+          "frame": 1.3833333333333333,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 2,
+            "y": 12
+          }
+        },
+        {
+          "frame": 1.5666666666666667,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 2.5,
+            "y": 15
+          }
+        },
+        {
+          "frame": 1.6666666666666667,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 2,
+            "y": 12
+          }
+        }
+      ]
+    }
+  },
+  "events": []
+}
