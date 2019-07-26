@@ -9,35 +9,36 @@
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
-    extends: cc.Component,
+  extends: cc.Component,
 
-    properties: {
-        BGMID: {
-            default:0,
-        },
-    },
+  properties: {
+    BGMID: {
+      default: 0
+    }
+  },
 
-    // LIFE-CYCLE CALLBACKS:
+  // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        this.node.on(cc.Node.EventType.TOUCH_END,this.onTouchEnd,this);
-    },
+  onLoad () {
+    this.node.on(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this)
+  },
 
-    onTouchEnd(t) {
-        console.log('ok');
-        if (this.BGMID>=0) {
-            cc.audioEngine.playMusic(cc.find('Canvas').getComponent('Game').BGMAudio[this.BGMID], true);
-        } else {
-            cc.audioEngine.stop();
-            if (this.BGMID==-2) cc.director.end();
-        }
-        let ui = cc.find('Canvas/MainUI');
-        if (ui!=null) ui.destroy();
-    },
+  onTouchEnd (t) {
+    console.log('ok')
+    if (this.BGMID >= 0) {
+      const canvasS = cc.find('Canvas').getComponent('Game')
+      canvasS.current = cc.audioEngine.playMusic(canvasS.BGMAudio[this.BGMID], true)
+    } else {
+      const canvasS = cc.find('Canvas').getComponent('Game')
+      cc.audioEngine.stop(canvasS.current)
+    }
+    const ui = cc.find('Canvas/MainUI')
+    if (ui != null) ui.destroy()
+  },
 
-    start () {
+  start () {
 
-    },
+  }
 
-    // update (dt) {},
-});
+  // update (dt) {},
+})

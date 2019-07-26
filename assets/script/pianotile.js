@@ -9,41 +9,40 @@
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
-    extends: cc.Component,
+  extends: cc.Component,
 
-    properties: {
-        murmurAudio: {
-            default: null,
-            type: cc.AudioClip
-        },
-        animId: {
-            default: 0,
-        }
+  properties: {
+    murmurAudio: {
+      default: null,
+      type: cc.AudioClip
     },
+    animId: {
+      default: 0
+    }
+  },
 
-    // LIFE-CYCLE CALLBACKS:
+  // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        //监听触摸开始事件
-    	this.node.on(cc.Node.EventType.TOUCH_START,this.onTouchStart,this);
-    },
+  onLoad () {
+    // 监听触摸开始事件
+    this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this)
+  },
 
-    onTouchStart(t) {
-        let anim = this.getComponent(cc.Animation);
-        if (anim!=null) anim.play('fadeOut');
-        if (this.murmurAudio != null) cc.audioEngine.playEffect(this.murmurAudio, false);
-        let backgroundEffect = cc.find("Canvas/DrawPic");
-        backgroundEffect.getComponent('GraphicAnim').AnimSpawn(this.animId);
-    },
+  onTouchStart () {
+    const anim = this.getComponent(cc.Animation)
+    if (anim != null) anim.play('fadeOut')
+    if (this.murmurAudio != null) cc.audioEngine.playEffect(this.murmurAudio, false)
+    const backgroundEffect = cc.find('Canvas/DrawPic')
+    backgroundEffect.getComponent('GraphicAnim').AnimSpawn(this.animId)
+  },
 
-    start () {
+  start () {
 
-    },
+  },
 
-    onDestroy() {
-        this.node.off(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
+  onDestroy () {
+    this.node.off(cc.Node.EventType.TOUCH_START, this.onTouchStart, this)
+  }
 
-    },
-
-    // update (dt) {},
-});
+  // update (dt) {},
+})

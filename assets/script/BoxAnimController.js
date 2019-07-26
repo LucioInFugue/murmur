@@ -9,27 +9,24 @@
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
-    extends: cc.Component,
+  extends: cc.Component,
 
-    properties: {
-       
-    },
+  properties: {
 
-    // LIFE-CYCLE CALLBACKS:
+  },
 
-    // onLoad () {},
+  // LIFE-CYCLE CALLBACKS:
 
-    start () {
-        let anim = this.getComponent(cc.Animation);
-        if (anim!=null) anim.play();
+  // onLoad () {},
 
-        this.scheduleOnce(function() {
-            this.node.destroy();
-        }, 2);
-    },
+  start () {
+    const anim = this.getComponent(cc.Animation)
+    if (anim != null) anim.play()
 
-    onDestroy() {
-        console.log('OK');
-    }
-    // update (dt) {},
-});
+    this.scheduleOnce(function () {
+      this.node.destroy()
+    }, 2)
+  }
+
+  // update (dt) {},
+})
